@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HHH</title>
+    <link rel="stylesheet" href="css/hhh.css">
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <p>&nbsp;</p>
+            <p>👻👻👻</p>
+            <p>&nbsp;</p>
+        </div><!-- .inner end -->
+    </header>
+    <div class="photo">
+        <div class="inner">
+            <p>HaPpy<br>hAllOwEen<br></p>
+            <div class="pumpkin">
+                <img id="pumpkinImg"
+                     src="img/pumpkin.png"
+                     alt="호박"
+                     onclick="toggleMusic()">
+            </div>
+            
+            <audio id="bgm" loop>
+                <source src="img/hhh.mp3" type="audio/mpeg">
+            </audio>
+            <p>↓ ↓ ↓ ↓<br> ↓ ↓ ↓<br>↓ ↓<br>↓</p>
+            <hr>
+            <p class="p1">pHOto<br>zOnE</p>
+            <p class="p2">사진을 누르면<br>할로윈 버전을 볼 수 이뜸＾＾</p>
+            <div class="pz">
+                <div class="item"><img src="img/11.jpg" alt="" onclick="changePhoto(this, 1)"></div>
+                <div class="item"><img src="img/22.jpg" alt="" onclick="changePhoto(this, 2)"></div>
+                <div class="item"><img src="img/33.jpg" alt="" onclick="changePhoto(this, 3)"></div>
+                <div class="item"><img src="img/44.jpg" alt="" onclick="changePhoto(this, 4)"></div>
+                <div class="item"><img src="img/55.jpg" alt="" onclick="changePhoto(this, 5)"></div>
+                <div class="item"><img src="img/66.jpg" alt="" onclick="changePhoto(this, 6)"></div>
+            </div>
+            <p class="p1">eNd<br>♬</p>
+        </div><!-- .inner end -->
+    </div><!-- .photo end -->
+
+    <script>
+        const bgm = document.getElementById("bgm");
+        const pumpkinImg = document.getElementById("pumpkinImg");
+    
+        function toggleMusic() {
+            if (bgm.paused) {
+                bgm.play();
+                pumpkinImg.src = "img/pumpkin_on.png";
+            } else {
+                bgm.pause();
+                pumpkinImg.src = "img/pumpkin.png";
+            }
+        }
+        function changePhoto(img, num) {
+    const normal = `img/${num}${num}.jpg`;
+    const halloween = `img/${num}${num}_${num}${num}.jpg`;
+
+    if (img.src.includes(`${num}${num}_${num}${num}.jpg`)) {
+        img.src = normal;
+    } else {
+        img.src = halloween;
+    }
+}
+    </script>
+    
+</body>
+
+</html>
